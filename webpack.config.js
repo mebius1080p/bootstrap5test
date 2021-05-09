@@ -37,6 +37,17 @@ module.exports = [
 						},
 					],
 				},
+				{
+					test: /\.(ttf|eot|woff|woff2|svg)$/,
+					use: {
+						loader: "file-loader",
+						options: {
+							name: "[name].[ext]",
+							outputPath: "./www/css/fonts", //output.path から続けるフォントコピー先ディレクトリ
+							publicPath: "./fonts", //ビルド後、css ファイルから見たフォントディレクトリパス
+						},
+					},
+				},
 			],
 		},
 		plugins: [
